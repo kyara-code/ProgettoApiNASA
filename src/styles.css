@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+  /* PALETTE dal più scuro al più chiaro */
+  --clr-1: #06293f;
+  --clr-2: #054163;
+  --clr-3: #50889d;
+  --clr-4: #92c0cf;
+  --clr-5: #ffffff;
+
+  font-family: "Italiana", serif;
+  font-weight: lighter;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
