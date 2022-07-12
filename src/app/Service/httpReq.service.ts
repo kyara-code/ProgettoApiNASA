@@ -11,7 +11,7 @@ export class HttpReq {
   // Chiamate Get
 
   onGetDailyImage() {
-    this.http.get<DailyImage>(
+    return this.http.get<DailyImage>(
       'https://api.nasa.gov/planetary/apod?api_key=' + apiKey
     );
   }
