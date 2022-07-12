@@ -1,3 +1,4 @@
+import { HttpReq } from './../Service/httpReq.service';
 import {
   Component,
   ElementRef,
@@ -21,7 +22,7 @@ export class HomepageComponent implements OnInit {
   opacity: number = 1;
   lastScrollTop: number = 0;
 
-  constructor() {}
+  constructor(private httpReq: HttpReq) {}
 
   ngOnInit(): void {}
 
