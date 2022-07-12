@@ -1,0 +1,57 @@
+<div class="wrapper">
+  <header>
+    <img src="../../assets/img/space-wallpaper.webp" class="background" />
+    <!-- aggiungere l'img foreground: il pianeta, che quindi si muove più velocemente -->
+    <div>
+      <h1 class="title">Title of the website</h1>
+      <h3 class="subtitle">SuperDuper awesome quote here</h3>
+    </div>
+  </header>
+
+  <div class="section">
+    <div class="daily-image">
+      <div>
+        <h1 class="image-title">Image of the day</h1>
+        <img [src]="dailyImgUrl" />
+      </div>
+
+      <h3 class="image-subtitle">Image of the day from the NASA archive.</h3>
+    </div>
+    <div class="central-container">
+      <div>
+        <h3>Menu</h3>
+        <div class="menu"></div>
+      </div>
+      <div>
+        <div class="title-news-container">
+          <h3>Latest news</h3>
+          <span>See all</span>
+        </div>
+        <div class="latest"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div>
+      <ul>
+        I nostri contatti:
+        <li>
+          <a href="https://github.com/ChristianKareemCianci"
+            ><i class="fa-brands fa-github"></i> Christian Kareem Cianci</a
+          >
+        </li>
+        <li>
+          <a href="https://github.com/kyara-code"
+            ><i class="fa-brands fa-github"></i> Chiara Valeri</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <!-- da mettere il form, oppure link che reindirizza alla pagina del form, se riusciamo a farci inviare mail in modo semplice -->
+    <div>
+      <a href="#" style="font-size: 1em">Contattaci</a>
+    </div>
+  </footer>
+</div>
