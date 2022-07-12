@@ -1,0 +1,156 @@
+.title,
+.subtitle,
+.image-subtitle,
+.image-title {
+  color: var(--clr-5);
+  text-shadow: 0 0 5px var(--clr-1);
+  text-align: center;
+}
+
+.title {
+  font-size: 5rem;
+}
+
+.subtitle {
+  font-size: 2rem;
+}
+
+.section {
+  font-size: 1rem;
+  padding: 0 2rem 2rem 2rem;
+  background-color: var(--clr-1);
+  color: var(--clr-5);
+
+  position: relative;
+}
+
+/* parallax effect */
+
+.wrapper {
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  perspective: 10px;
+}
+
+header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  transform-style: preserve-3d;
+
+  z-index: -1;
+}
+
+/* both backround and foreground */
+.background {
+  position: absolute;
+  height: 100%;
+  width: 100vw;
+  object-fit: cover;
+
+  z-index: -1;
+}
+
+header div {
+  transform: translateZ(-5px) scale(1.5);
+}
+
+/* separately */
+.background {
+  transform: translateZ(-15px) scale(2.5);
+}
+
+/* ----------------- */
+
+.daily-image {
+  width: 100%;
+  left: 0;
+  display: block;
+
+  transform: translateY(-100px);
+}
+
+.daily-image div {
+  display: flex;
+  justify-content: center;
+
+  position: relative;
+}
+
+.daily-image div img {
+  width: 80%;
+}
+
+.image-title {
+  position: absolute;
+  top: 0;
+}
+
+/* ----------- */
+
+.central-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.menu {
+  height: 600px;
+  width: 200px;
+  background-color: var(--clr-2);
+}
+
+.latest {
+  height: 600px;
+  width: calc(100vw - 300px);
+  background-color: var(--clr-2);
+  opacity: 0.35;
+}
+
+.title-news-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.central-container h3 {
+  margin: 0;
+  text-align: center;
+}
+
+/* ----------- */
+
+footer {
+  background-color: var(--clr-2);
+  color: var(--clr-5);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer div:nth-child(2) {
+  padding-right: 60px;
+}
+
+footer ul {
+  margin: 0;
+}
+
+footer ul li {
+  text-indent: 1em;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  font-size: smaller;
+  color: var(--clr-5);
+}
+
+a:hover,
+a:active {
+  color: var(--clr-4);
+}
