@@ -1,3 +1,4 @@
+import { DailyImage } from './../Model/dailyImage.model';
 import { Component, OnInit } from '@angular/core';
 import { HttpReq } from '../Service/httpReq.service';
 
@@ -7,14 +8,19 @@ import { HttpReq } from '../Service/httpReq.service';
   styleUrls: ['./home-page.component.css'],
 })
 export class HomePageComponent implements OnInit {
-  dailyImgUrl: string = '';
+  dailyImg: DailyImage | null = null;
+
+  newsArray = [{ id: 0, title: '', newsText: '', imgUrl: '' }];
 
   constructor(private httpReqService: HttpReq) {}
 
   ngOnInit(): void {
     this.httpReqService.onGetDailyImage().subscribe((response) => {
-      this.dailyImgUrl = response.hdurl;
+      this.dailyImg = response;
       console.log(response);
     });
+
+    // riempio news array
+    this.newsArray = this.httpReqService.newsArray;
   }
 }
