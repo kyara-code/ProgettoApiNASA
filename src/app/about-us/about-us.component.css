@@ -1,0 +1,74 @@
+* {
+  color: var(--clr-5);
+}
+
+.title,
+.subtitle {
+  color: var(--clr-5);
+  text-shadow: 0 0 5px var(--clr-1);
+  text-align: center;
+}
+
+.title {
+  font-size: 5rem;
+}
+
+/* parallax effect */
+
+.wrapper {
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  perspective: 10px;
+}
+
+header {
+  position: relative;
+  height: 100%;
+  transform-style: preserve-3d;
+
+  z-index: -1;
+}
+
+/* both backround and foreground */
+.background {
+  position: absolute;
+  height: 100%;
+  width: 100vw;
+  object-fit: cover;
+
+  z-index: -1;
+}
+
+header div {
+  transform: translateZ(-5px) scale(1.5);
+}
+
+/* separately */
+.background {
+  transform: translateZ(-15px) scale(2.5);
+}
+
+/* ---- Who Section ---- */
+.profile-picture {
+  width: 200px;
+  background-color: var(--clr-2);
+}
+
+.main {
+  background-color: var(--clr-1);
+}
+
+.who-section {
+  background-color: rgba(var(--clr-1-rgb), 0.65);
+  padding: 15px;
+}
+
+.who-section div {
+  padding: 10px;
+}
+
+.description,
+.subtitle {
+  text-align: center;
+}

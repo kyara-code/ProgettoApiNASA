@@ -34,5 +34,23 @@ a {
 
 .link-active {
   padding-bottom: 1px;
-  border-bottom: 2px solid var(--clr-5);
+  /* border-bottom: 2px solid var(--clr-5); */
+}
+
+.link-active::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(1);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--clr-5);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.link-active:hover::after {
+  transform: scaleX(0);
+  transform-origin: bottom left;
 }
