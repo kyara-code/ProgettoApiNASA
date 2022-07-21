@@ -1,5 +1,4 @@
 .navbar {
-  color: var(--clr-5);
   position: relative;
   width: 100%;
   height: fit-content;
@@ -11,6 +10,8 @@
 a {
   position: relative;
   cursor: pointer;
+  color: var(--clr-5);
+  text-decoration: none;
 }
 
 .link-inactive::after {
