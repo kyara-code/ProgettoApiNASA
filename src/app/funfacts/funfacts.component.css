@@ -4,18 +4,25 @@
   overflow-x: hidden;
   perspective: 10px;
   position: relative;
+
+  perspective: 10px;
 }
 
 /* --- Top Page --- */
 
 header {
   height: 100%;
+
+  transform-style: preserve-3d;
 }
 
 .background {
   position: absolute;
   height: 100%;
   width: 100vw;
+  object-fit: cover;
+
+  transform: translateZ(-15px) scale(2.5);
 }
 
 /* Title */
@@ -23,6 +30,8 @@ header {
 .title-container {
   display: flex;
   justify-content: center;
+
+  transform: translateZ(-5px) scale(1.5);
 }
 
 .title {
