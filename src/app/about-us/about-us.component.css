@@ -1,0 +1,45 @@
+.title,
+.subtitle {
+  color: var(--clr-5);
+  text-shadow: 0 0 5px var(--clr-1);
+  text-align: center;
+}
+
+.title {
+  font-size: 5rem;
+}
+
+/* parallax effect */
+
+.wrapper {
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  perspective: 10px;
+}
+
+header {
+  height: 100%;
+  transform-style: preserve-3d;
+
+  z-index: -1;
+}
+
+/* both backround and foreground */
+.background {
+  position: absolute;
+  height: 100%;
+  width: 100vw;
+  object-fit: cover;
+
+  z-index: -1;
+}
+
+header div {
+  transform: translateZ(-5px) scale(1.5);
+}
+
+/* separately */
+.background {
+  transform: translateZ(-15px) scale(2.5);
+}
