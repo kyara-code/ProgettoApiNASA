@@ -1,4 +1,4 @@
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,19 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
-  constructor(private router: Router) {}
+  url: string = '';
 
-  ngOnInit(): void {}
+  constructor(private router: Router, private route: ActivatedRoute) {}
 
-  onNavigateToFunFacts() {
-    this.router.navigate(['/fun-facts']);
-  }
-
-  onNavigateToPhotos() {
-    this.router.navigate(['/photos']);
-  }
-
-  onNavigateToAboutUs() {
-    this.router.navigate(['/about-us']);
+  ngOnInit(): void {
+    // leggo l'url per il menu
+    this.route.url.subscribe((res) => {
+      this.url = res[0].path;
+    });
   }
 }

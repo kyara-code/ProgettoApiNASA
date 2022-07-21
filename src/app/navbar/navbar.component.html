@@ -1,5 +1,33 @@
-<div class="navbar">
+<!-- <div class="navbar">
   <a class="link-active" (click)="onNavigateToFunFacts()">Fun Facts</a>
   <a class="link-inactive" (click)="onNavigateToPhotos()">Photos</a>
   <a class="link-inactive" (click)="onNavigateToAboutUs()">About Us</a>
+</div> -->
+
+<!-- leggere il link dall'url in typescript -->
+<div class="navbar">
+  <a
+    [ngClass]="{
+      'link-active': url === 'fun-facts',
+      'link-inactive': url !== 'fun-facts'
+    }"
+    routerLink="/fun-facts"
+    >Fun Facts</a
+  >
+  <a
+    [ngClass]="{
+      'link-active': url === 'photos',
+      'link-inactive': url !== 'photos'
+    }"
+    routerLink="/photos"
+    >Photos</a
+  >
+  <a
+    [ngClass]="{
+      'link-active': url === 'about-us',
+      'link-inactive': url !== 'about-us'
+    }"
+    routerLink="/about-us"
+    >About Us</a
+  >
 </div>
