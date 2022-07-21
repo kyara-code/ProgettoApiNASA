@@ -8,6 +8,12 @@
   --clr-4: #92c0cf;
   --clr-5: #ffffff;
 
+  --clr-1-rgb: 6, 41, 63;
+  --clr-2-rgb: 5, 65, 99;
+  --clr-3-rgb: 80, 136, 157;
+  --clr-4-rgb: 146, 192, 207;
+  --clr-5-rgb: 255, 255, 255;
+
   font-family: "Italiana", serif;
   font-weight: lighter;
 }
