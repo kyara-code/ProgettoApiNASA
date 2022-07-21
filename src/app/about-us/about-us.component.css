@@ -1,3 +1,7 @@
+* {
+  color: var(--clr-5);
+}
+
 .title,
 .subtitle {
   color: var(--clr-5);
@@ -19,6 +23,7 @@
 }
 
 header {
+  position: relative;
   height: 100%;
   transform-style: preserve-3d;
 
@@ -42,4 +47,28 @@ header div {
 /* separately */
 .background {
   transform: translateZ(-15px) scale(2.5);
+}
+
+/* ---- Who Section ---- */
+.profile-picture {
+  width: 200px;
+  background-color: var(--clr-2);
+}
+
+.main {
+  background-color: var(--clr-1);
+}
+
+.who-section {
+  background-color: rgba(var(--clr-1-rgb), 0.65);
+  padding: 15px;
+}
+
+.who-section div {
+  padding: 10px;
+}
+
+.description,
+.subtitle {
+  text-align: center;
 }
