@@ -1,0 +1,91 @@
+.wrapper {
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  perspective: 10px;
+  position: relative;
+}
+
+/* --- Top Page --- */
+
+header {
+  height: 100%;
+}
+
+.background {
+  position: absolute;
+  height: 100%;
+  width: 100vw;
+}
+
+/* Title */
+
+.title-container {
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  color: var(--clr-5);
+  font-size: 5rem;
+  position: relative;
+}
+
+/* --- End Top Page ---  */
+
+/* --- Subjects Section --- */
+
+.menu {
+  background-color: rgba(var(--clr-2-rgb), 0.7);
+  transform: translateY(-200px);
+  width: 80%;
+  margin-left: 10%;
+  padding: 2rem 2rem 2rem 2rem;
+}
+
+.menu-title {
+  color: var(--clr-5);
+  font-size: 2rem;
+  padding-bottom: 20px;
+}
+
+.subjects-list {
+  display: flex;
+  justify-content: space-around;
+}
+
+.subject {
+  width: fit-content;
+  display: block;
+  cursor: pointer;
+}
+
+.icon {
+  height: 100px;
+  background-color: var(--clr-1);
+}
+
+.subject-title {
+  /* Se cambia la larghezza della foto è da modificare */
+  width: 100px;
+  color: var(--clr-5);
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+/* --- End Subjects Section ---  */
+
+/* --- Fun Facts Section ---  */
+
+.section {
+  background-color: var(--clr-1);
+  position: relative;
+  font-size: 1rem;
+  padding: 0 2rem 2rem 2rem;
+  color: var(--clr-5);
+}
+
+.fun-facts-list {
+  background-color: rgba(5, 65, 99, 0.35);
+  padding: 1em 0;
+}
