@@ -25,7 +25,9 @@
         <div class="menu">
           <ul>
             <li>
-              <a routerLink="/fun-facts">FunFacts</a>
+              <a routerLink="fun-facts/topic" [queryParams]="{ id: 'earth' }"
+                >FunFacts</a
+              >
             </li>
             <li>
               <a routerLink="/photos">Images Archive</a>

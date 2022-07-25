@@ -11,6 +11,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { PhotosComponent } from './photos/photos.component';
 import { ErrorComponent } from './error/error.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { TopicComponent } from './funfacts/topic/topic.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     PhotosComponent,
     ErrorComponent,
     NavbarComponent,
+    TopicComponent,
   ],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule],
   providers: [],

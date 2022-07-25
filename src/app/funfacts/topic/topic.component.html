@@ -1,0 +1,10 @@
+<h1 class="topic-title">
+  {{ chosenTopic | titlecase }}
+</h1>
+<div class="fun-facts-list">
+  <ul class="fun-facts" *ngFor="let funfact of funfactsArray">
+    <li class="single-fun-fact">
+      <h2>{{ funfact.newsText | slice: 0:300 }}</h2>
+    </li>
+  </ul>
+</div>

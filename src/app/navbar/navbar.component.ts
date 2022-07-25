@@ -17,4 +17,10 @@ export class NavbarComponent implements OnInit {
       this.url = res[0].path;
     });
   }
+
+  onNavigateOnHomePage(path: string) {
+    if (this.url === path) {
+      this.router.navigate(['']);
+    }
+  }
 }

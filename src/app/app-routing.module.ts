@@ -1,3 +1,4 @@
+import { TopicComponent } from './funfacts/topic/topic.component';
 import { ErrorComponent } from './error/error.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { PhotosComponent } from './photos/photos.component';
@@ -14,6 +15,12 @@ const routes: Routes = [
   {
     path: 'fun-facts',
     component: FunfactsComponent,
+    children: [
+      {
+        path: ':id',
+        component: TopicComponent,
+      },
+    ],
   },
   {
     path: 'photos',

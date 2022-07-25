@@ -11,15 +11,33 @@ export class FunfactsComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onNavigateToFunFacts() {
-    this.router.navigate(['/fun-facts']);
+  onShowEarthFunFacts() {
+    this.router.navigate(['/fun-facts/topic'], {
+      queryParams: { id: 'earth' },
+    });
   }
 
-  onNavigateToPhotos() {
-    this.router.navigate(['/photos']);
+  onShowSolarSystemFunFacts() {
+    this.router.navigate(['/fun-facts/topic'], {
+      queryParams: { id: 'solar system' },
+    });
   }
 
-  onNavigateToAboutUs() {
-    this.router.navigate(['/about-us']);
+  onShowMilkyWayFunFacts() {
+    this.router.navigate(['/fun-facts/topic'], {
+      queryParams: { id: 'milky way' },
+    });
+  }
+
+  onShowLocalGroupFunFacts() {
+    this.router.navigate(['/fun-facts/topic'], {
+      queryParams: { id: 'local group' },
+    });
+  }
+
+  onShowCosmologyFunFacts() {
+    this.router.navigate(['/fun-facts/topic'], {
+      queryParams: { id: 'cosmology' },
+    });
   }
 }

@@ -71,6 +71,7 @@ header {
 
 .icon {
   height: 100px;
+  /* Ricordarsi di mettere altezza e larghezza in percentuale  */
   background-color: var(--clr-1);
 }
 
@@ -92,9 +93,4 @@ header {
   font-size: 1rem;
   padding: 0 2rem 2rem 2rem;
   color: var(--clr-5);
-}
-
-.fun-facts-list {
-  background-color: rgba(5, 65, 99, 0.35);
-  padding: 1em 0;
 }
