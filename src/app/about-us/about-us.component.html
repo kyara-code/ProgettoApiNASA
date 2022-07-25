@@ -10,14 +10,23 @@
 
   <div class="main">
     <div class="who-section">
-      <h3>Who</h3>
+      <h3 class="second-title">Who</h3>
       <div style="display: flex; justify-content: space-around">
-        <div>
+        <div class="single-section">
           <div>
-            <img
-              src="https://img.icons8.com/ios/500/star--v1.png"
-              class="profile-picture"
-            />
+            <div
+              style="
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                padding: 0;
+              "
+            >
+              <img
+                src="https://img.icons8.com/ios/500/star--v1.png"
+                class="profile-picture"
+              />
+            </div>
             <p class="subtitle">Christian Kareem Cianci</p>
           </div>
           <div class="description">
@@ -36,12 +45,21 @@
             doloribus nam.
           </div>
         </div>
-        <div>
+        <div class="single-section">
           <div>
-            <img
-              src="https://img.icons8.com/ios/500/star--v1.png"
-              class="profile-picture"
-            />
+            <div
+              style="
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                padding: 0;
+              "
+            >
+              <img
+                src="https://img.icons8.com/ios/500/star--v1.png"
+                class="profile-picture"
+              />
+            </div>
             <p class="subtitle">Chiara Valeri</p>
           </div>
           <div class="description">
@@ -60,6 +78,60 @@
             quos itaque.
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- contact form -->
+    <div style="transform: translateY(-200px); width: 60%">
+      <h3 class="contact-title">Contact Us</h3>
+      <div class="contact-section">
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+          <div style="width: 80%">
+            <div class="user-contact-container">
+              <div class="field-container">
+                <span
+                  class="error help-block"
+                  *ngIf="
+                    !contactForm.get('name')?.valid &&
+                    contactForm.get('name')?.touched
+                  "
+                  >Please insert your name
+                </span>
+                <mat-form-field appearance="fill">
+                  <mat-label>Name</mat-label>
+                  <input matInput formControlName="name" />
+                </mat-form-field>
+              </div>
+
+              <div class="field-container">
+                <span
+                  class="error help-block"
+                  *ngIf="
+                    !contactForm.get('email')?.valid &&
+                    contactForm.get('email')?.touched
+                  "
+                  >Please insert a valid email
+                </span>
+                <mat-form-field appearance="fill">
+                  <mat-label>Email</mat-label>
+                  <input matInput formControlName="email" />
+                </mat-form-field>
+              </div>
+            </div>
+            <mat-form-field appearance="fill">
+              <mat-label>Subject</mat-label>
+              <input matInput formControlName="subject" />
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Body</mat-label>
+              <textarea matInput formControlName="body"></textarea>
+            </mat-form-field>
+
+            <div class="btn-center">
+              <button mat-button type="submit">Send</button>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </div>

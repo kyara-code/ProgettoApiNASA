@@ -57,10 +57,17 @@ header div {
 
 .main {
   background-color: var(--clr-1);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .who-section {
-  background-color: rgba(var(--clr-1-rgb), 0.65);
+  transform: translateY(-300px);
+
+  width: 80%;
+  background-color: rgba(var(--clr-2-rgb), 0.65);
   padding: 15px;
 }
 
@@ -70,5 +77,109 @@ header div {
 
 .description,
 .subtitle {
+  width: 100%;
   text-align: center;
+}
+
+.description {
+  background-color: var(--clr-2);
+}
+
+.second-title {
+  text-indent: 20%;
+}
+
+.single-section {
+  margin: 0 10px;
+}
+
+/* ---- Contact form ---- */
+
+.contact-section {
+  background-color: var(--clr-2);
+
+  padding: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+input,
+textarea {
+  width: 100%;
+}
+
+.user-contact-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.field-container {
+  width: 100%;
+  display: block;
+}
+
+@media screen and (min-width: 1000px) {
+  .user-contact-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .field-container {
+    width: 45%;
+  }
+}
+
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+  border-radius: 0 !important;
+  background-color: rgba(var(--clr-5-rgb), 0.1);
+}
+
+::ng-deep .mat-button:hover {
+  background-color: rgba(var(--clr-5-rgb), 0.1);
+  border-radius: 0;
+}
+
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-underline::before {
+  background-color: rgba(var(--clr-3-rgb), 0.6);
+}
+
+::ng-deep .mat-form-field-ripple {
+  background-color: rgba(var(--clr-3-rgb), 1);
+}
+
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex:hover {
+  box-shadow: 3px 3px 5px rgb(var(--clr-1-rgb), 0.4);
+}
+
+::ng-deep .mat-form-field-wrapper:hover {
+  transform: translateX(-5px);
+  transition: 0.5s;
+}
+
+.btn-center {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-center button {
+  font-size: larger;
+  font-variant: small-caps;
+}
+
+.error {
+  color: var(--clr-error) !important;
+  font-weight: bold;
+  /* text-shadow: 0 0 5px rgba(var(--clr-5-rgb), 0.9); */
 }
