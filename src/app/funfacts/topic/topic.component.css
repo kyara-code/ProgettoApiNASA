@@ -1,0 +1,21 @@
+.topic-title {
+  display: flex;
+  justify-content: center;
+  font-size: 3rem;
+}
+
+.fun-facts-list {
+  background-color: rgba(5, 65, 99, 0.35);
+  padding: 1em 0;
+}
+
+.single-fun-fact {
+  margin: 1em 2em 1em 2em;
+  padding: 1em;
+  background-color: var(--clr-2);
+}
+
+.single-fun-fact h1,
+.single-fun-fact p {
+  padding: 10px;
+}

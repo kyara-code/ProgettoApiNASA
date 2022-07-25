@@ -13,6 +13,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { PhotosComponent } from './photos/photos.component';
 import { ErrorComponent } from './error/error.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { TopicComponent } from './funfacts/topic/topic.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -27,6 +28,7 @@ import { MatButtonModule } from '@angular/material/button';
     PhotosComponent,
     ErrorComponent,
     NavbarComponent,
+    TopicComponent,
   ],
   imports: [
     BrowserModule,

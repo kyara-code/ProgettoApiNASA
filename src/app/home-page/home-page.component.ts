@@ -17,7 +17,6 @@ export class HomePageComponent implements OnInit {
   ngOnInit(): void {
     this.httpReqService.onGetDailyImage().subscribe((response) => {
       this.dailyImg = response;
-      console.log(response);
     });
 
     // riempio news array
