@@ -63,4 +63,21 @@ export class HttpReq {
         apiKey
     );
   }
+
+  // invio delle email ----------
+
+  onSendEmail(
+    fromName: string,
+    fromEmail: string,
+    subject: string,
+    body: string
+  ) {
+    return this.http.post('http://localhost:8080/sendingemail', {
+      to: 'ccproject.mailbox@gmail.com',
+      subject: 'Message from ' + fromName + ' ' + fromEmail + ' - ' + subject,
+      message: body,
+    });
+  }
+
+  // ----------------------------
 }

@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 * {
   /* PALETTE dal più scuro al più chiaro */
@@ -7,12 +8,14 @@
   --clr-3: #50889d;
   --clr-4: #92c0cf;
   --clr-5: #ffffff;
+  --clr-error: rgb(244, 103, 103);
 
   --clr-1-rgb: 6, 41, 63;
   --clr-2-rgb: 5, 65, 99;
   --clr-3-rgb: 80, 136, 157;
   --clr-4-rgb: 146, 192, 207;
   --clr-5-rgb: 255, 255, 255;
+  --clr-error-rgb: 244, 103, 103;
 
   font-family: "Italiana", serif;
   font-weight: lighter;
@@ -28,4 +31,13 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
