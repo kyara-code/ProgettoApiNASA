@@ -6,6 +6,7 @@
       'link-inactive': url !== 'fun-facts'
     }"
     routerLink="/fun-facts"
+    (click)="onNavigateOnHomePage('fun-facts')"
     >Fun Facts</a
   >
   <a
@@ -14,6 +15,7 @@
       'link-inactive': url !== 'photos'
     }"
     routerLink="/photos"
+    (click)="onNavigateOnHomePage('photos')"
     >Photos</a
   >
   <a
@@ -22,6 +24,7 @@
       'link-inactive': url !== 'about-us'
     }"
     routerLink="/about-us"
+    (click)="onNavigateOnHomePage('about-us')"
     >About Us</a
   >
 </div>
