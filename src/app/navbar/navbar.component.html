@@ -5,7 +5,8 @@
       'link-active': url === 'fun-facts',
       'link-inactive': url !== 'fun-facts'
     }"
-    routerLink="/fun-facts"
+    [routerLink]="['/fun-facts/topic']"
+    [queryParams]="{ id: 'earth' }"
     (click)="onNavigateOnHomePage('fun-facts')"
     >Fun Facts</a
   >

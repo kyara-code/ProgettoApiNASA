@@ -1,3 +1,4 @@
+import { SingleImageComponent } from './photos/single-image/single-image.component';
 import { TopicComponent } from './funfacts/topic/topic.component';
 import { ErrorComponent } from './error/error.component';
 import { AboutUsComponent } from './about-us/about-us.component';
@@ -6,6 +7,7 @@ import { FunfactsComponent } from './funfacts/funfacts.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { single } from 'rxjs';
 
 const routes: Routes = [
   {
@@ -25,6 +27,12 @@ const routes: Routes = [
   {
     path: 'photos',
     component: PhotosComponent,
+    children: [
+      {
+        path: ':id',
+        component: SingleImageComponent,
+      },
+    ],
   },
   {
     path: 'about-us',
