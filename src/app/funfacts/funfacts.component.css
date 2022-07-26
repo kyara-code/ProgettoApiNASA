@@ -46,8 +46,9 @@ header {
 
 .menu {
   background-color: rgba(var(--clr-2-rgb), 0.7);
-  transform: translateY(-200px);
+  transform: translateY(-300px);
   width: 80%;
+  height: 80%;
   margin-left: 10%;
   padding: 2rem 2rem 2rem 2rem;
 }

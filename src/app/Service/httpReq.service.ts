@@ -6,6 +6,11 @@ import { Injectable } from '@angular/core';
 const apiKey: string = 'Qr4E5dURKQI1MTf08xdOpUYPgLgQz7N2U57jUkLg';
 @Injectable({ providedIn: 'root' })
 export class HttpReq {
+  tempStartDate = new Date();
+  tempEndDate = new Date();
+  startDate: string = '';
+  endDate: string = '';
+
   newsArray = [
     {
       id: 1,
@@ -55,6 +60,32 @@ export class HttpReq {
     return this.http.get<DailyImage>(
       'https://api.nasa.gov/planetary/apod?api_key=' + apiKey
     );
+  }
+
+  onGetDailyImageArchive() {
+    this.onChangeDate();
+    return this.http.get<DailyImage[]>(
+      'https://api.nasa.gov/planetary/apod?api_key=' +
+        apiKey +
+        '&start_date=' +
+        this.startDate +
+        '&end_date=' +
+        this.endDate
+    );
+  }
+
+  onChangeDate() {
+    this.tempEndDate.setDate(this.tempStartDate.getDate());
+    this.tempStartDate.setDate(this.tempStartDate.getDate() - 12);
+    this.startDate = this.tempStartDate.toISOString().split('T')[0];
+    this.endDate = this.tempEndDate.toISOString().split('T')[0];
+  }
+
+  onResetDate() {
+    this.tempEndDate = new Date();
+    this.tempStartDate = new Date();
+    this.startDate = '';
+    this.endDate = '';
   }
 
   onGetMarsPhoto() {

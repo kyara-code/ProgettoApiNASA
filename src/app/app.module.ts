@@ -19,6 +19,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { SingleImageComponent } from './photos/single-image/single-image.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +30,7 @@ import { MatButtonModule } from '@angular/material/button';
     ErrorComponent,
     NavbarComponent,
     TopicComponent,
+    SingleImageComponent,
   ],
   imports: [
     BrowserModule,
