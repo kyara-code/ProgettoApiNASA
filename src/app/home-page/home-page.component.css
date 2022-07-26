@@ -82,12 +82,38 @@ header div {
 
 .daily-image div img {
   width: 80%;
+  z-index: 3;
 }
 
 .image-title {
   position: absolute;
   top: 0;
+
+  z-index: 5;
 }
+
+/* .ytp-title-link {
+  color: transparent;
+} */
+
+.iframe-container {
+  position: relative;
+  width: 80%;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+
+.iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  z-index: 10;
+}
+
+/* grazie a Christian per l'iframe. */
 
 /* ----------- */
 
