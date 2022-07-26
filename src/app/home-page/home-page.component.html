@@ -12,12 +12,22 @@
     <div class="daily-image">
       <div>
         <h1 class="image-title">Image of the day</h1>
-        <img [src]="dailyImg?.hdurl" />
+        <div class="iframe-container">
+          <iframe
+            width="60%"
+            height="300px"
+            [src]="photoURL()"
+            allowfullscreen
+            *ngIf="dailyImg?.url?.includes('youtube'); else image"
+          >
+          </iframe>
+        </div>
+        <ng-template #image><img [src]="dailyImg.hdurl" /></ng-template>
       </div>
 
-      <h3 class="image-subtitle">{{ dailyImg?.title }}:</h3>
+      <h3 class="image-subtitle">{{ dailyImg.title }}:</h3>
       <!-- DESCRIZIONE DA STILIZZARE: DENTRO UN DIV CONTENITORE, PIù CARINA -->
-      <p>{{ dailyImg?.explanation }}</p>
+      <p>{{ dailyImg.explanation }}</p>
     </div>
     <div class="central-container">
       <div style="flex: 1">
