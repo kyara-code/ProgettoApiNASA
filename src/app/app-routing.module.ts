@@ -7,7 +7,6 @@ import { FunfactsComponent } from './funfacts/funfacts.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { single } from 'rxjs';
 
 const routes: Routes = [
   {
@@ -19,7 +18,7 @@ const routes: Routes = [
     component: FunfactsComponent,
     children: [
       {
-        path: ':id',
+        path: 'topic',
         component: TopicComponent,
       },
     ],
@@ -29,7 +28,7 @@ const routes: Routes = [
     component: PhotosComponent,
     children: [
       {
-        path: ':id',
+        path: 'single-photo',
         component: SingleImageComponent,
       },
     ],
