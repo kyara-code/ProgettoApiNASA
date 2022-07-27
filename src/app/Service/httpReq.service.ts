@@ -11,6 +11,8 @@ export class HttpReq {
   startDate: string = '';
   endDate: string = '';
 
+  imageArray: DailyImage[] = [];
+
   newsArray = [
     {
       id: 1,
@@ -75,7 +77,11 @@ export class HttpReq {
   }
 
   onChangeDate() {
-    this.tempEndDate.setDate(this.tempStartDate.getDate());
+    if (this.startDate === this.endDate) {
+      this.tempEndDate.setDate(this.tempStartDate.getDate());
+    } else {
+      this.tempEndDate.setDate(this.tempStartDate.getDate() - 1);
+    }
     this.tempStartDate.setDate(this.tempStartDate.getDate() - 12);
     this.startDate = this.tempStartDate.toISOString().split('T')[0];
     this.endDate = this.tempEndDate.toISOString().split('T')[0];

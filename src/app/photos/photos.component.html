@@ -14,9 +14,16 @@
       <!-- div con il wrap -->
       <div class="photo-container">
         <!-- div singolo della foto -->
-        <div *ngFor="let photo of photoArray" (click)="onGetPhoto(photo)">
+        <div
+          *ngFor="let photo of photoArray; let i = index"
+          (click)="onGetPhoto(i)"
+        >
           <img [src]="photo.hdurl" />
         </div>
+      </div>
+
+      <div class="btn-container">
+        <button mat-button (click)="onLoadMore()">Load 12 more...</button>
       </div>
     </div>
   </div>

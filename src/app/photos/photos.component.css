@@ -97,3 +97,18 @@ header div {
 }
 
 /* roba dei popup spostata in single image */
+
+.btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+::ng-deep .mat-button-wrapper {
+  font-size: 1.3em !important;
+}
+
+.btn-container button:hover {
+  background-color: rgba(var(--clr-5-rgb), 0.1);
+  border-radius: 0;
+}
