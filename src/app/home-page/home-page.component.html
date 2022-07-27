@@ -12,14 +12,11 @@
     <div class="daily-image">
       <div>
         <h1 class="image-title">Image of the day</h1>
-        <div class="iframe-container">
-          <iframe
-            width="60%"
-            height="300px"
-            [src]="photoURL()"
-            allowfullscreen
-            *ngIf="dailyImg?.url?.includes('youtube'); else image"
-          >
+        <div
+          class="iframe-container"
+          *ngIf="dailyImg?.url?.includes('youtube'); else image"
+        >
+          <iframe width="60%" height="300px" [src]="photoURL()" allowfullscreen>
           </iframe>
         </div>
         <ng-template #image><img [src]="dailyImg.hdurl" /></ng-template>
