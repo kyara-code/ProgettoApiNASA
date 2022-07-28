@@ -61,6 +61,7 @@ export class PhotosComponent implements OnInit, OnDestroy {
     this.httpReq.onGetDailyImageArchive().subscribe((res) => {
       res.reverse();
       this.photoArray = this.photoArray.concat(res);
+      this.httpReq.imageArray = this.photoArray;
     });
   }
 
