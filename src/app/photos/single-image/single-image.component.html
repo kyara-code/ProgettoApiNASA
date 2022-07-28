@@ -1,7 +1,7 @@
 <div class="backdrop" (click)="onClose()"></div>
 
 <div class="popup">
-  <h2>{{ photo.title }}</h2>
+  <h2>{{ photo.title }} ({{ photo.date }})</h2>
   <div class="container">
     <img [src]="photo.hdurl" alt="" />
     <p>
