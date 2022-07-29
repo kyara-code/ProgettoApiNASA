@@ -23,21 +23,21 @@ export class FunfactsComponent implements OnInit {
     });
   }
 
-  onShowMilkyWayFunFacts() {
+  onShowExoplanetsFunFacts() {
     this.router.navigate(['/fun-facts/topic'], {
-      queryParams: { id: 'milky way' },
+      queryParams: { id: 'exoplanets' },
     });
   }
 
-  onShowLocalGroupFunFacts() {
+  onShowBlackHoleFunFacts() {
     this.router.navigate(['/fun-facts/topic'], {
-      queryParams: { id: 'local group' },
+      queryParams: { id: 'black hole' },
     });
   }
 
   onShowCosmologyFunFacts() {
     this.router.navigate(['/fun-facts/topic'], {
-      queryParams: { id: 'cosmology' },
+      queryParams: { id: '' },
     });
   }
 }

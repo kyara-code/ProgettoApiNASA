@@ -52,10 +52,10 @@
         </div>
         <div class="latest">
           <div *ngFor="let news of newsArray" class="single-news">
-            <img [src]="news.imgUrl" />
+            <img [src]="news.imageUrl" />
             <div>
               <h2>{{ news.title }}</h2>
-              <p>{{ news.newsText | slice: 0:100 }}...</p>
+              <p>{{ news.summary | slice: 0:100 }}...</p>
             </div>
           </div>
         </div>

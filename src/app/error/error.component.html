@@ -1,10 +1,28 @@
 <div class="text" #text>
-  <h1>Error 404</h1>
-  <p>We're sorry, the page was not found.</p>
+  <div
+    class="container"
+    [ngClass]="{ animated: textAnimated, 'not-animated': !textAnimated }"
+  >
+    <div id="left">
+      <h1>Erro</h1>
+      <p>We're sorry, the pa</p>
+    </div>
+
+    <div id="right">
+      <h1>r 404</h1>
+      <p>ge was not found.</p>
+    </div>
+  </div>
 </div>
 
-<img
-  src="../../assets/img/astronaut.png"
-  [@astronautMove]="stateAstronaut"
-  #astronaut
-/>
+<div class="drag-container">
+  <img
+    src="../../assets/img/astronaut.png"
+    [@astronautMove]="stateAstronaut"
+    #astronaut
+    cdkDragLockAxis="y"
+    cdkDrag
+    [cdkDragDisabled]="!astronautIsAbove"
+    cdkDragBoundary=".drag-container"
+  />
+</div>

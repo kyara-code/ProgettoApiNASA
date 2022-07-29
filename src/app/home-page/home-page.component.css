@@ -181,7 +181,7 @@ header div {
 
 .single-news {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 
   margin: 1em 2em 1em 2em;
   background-color: var(--clr-2);

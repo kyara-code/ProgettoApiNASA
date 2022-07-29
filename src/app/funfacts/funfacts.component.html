@@ -29,21 +29,21 @@
           />
           <div class="subject-title">Solar System</div>
         </div>
-        <div class="subject" (click)="onShowMilkyWayFunFacts()">
+        <div class="subject" (click)="onShowExoplanetsFunFacts()">
           <img
             class="icon"
             src="https://img.icons8.com/ios/500/star--v1.png"
             alt="icon"
           />
-          <div class="subject-title">Milky Way</div>
+          <div class="subject-title">Exoplanets</div>
         </div>
-        <div class="subject" (click)="onShowLocalGroupFunFacts()">
+        <div class="subject" (click)="onShowBlackHoleFunFacts()">
           <img
             class="icon"
             src="https://img.icons8.com/ios/500/star--v1.png"
             alt="icon"
           />
-          <div class="subject-title">Local Group</div>
+          <div class="subject-title">Black Hole</div>
         </div>
         <div class="subject" (click)="onShowCosmologyFunFacts()">
           <img
@@ -51,12 +51,14 @@
             src="https://img.icons8.com/ios/500/star--v1.png"
             alt="icon"
           />
-          <div class="subject-title">Cosmology</div>
+          <div class="subject-title">All Fun Facts</div>
         </div>
       </div>
     </div>
 
     <!-- Fun Facts Section -->
-    <router-outlet></router-outlet>
+    <div class="fun-facts-section">
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </div>
