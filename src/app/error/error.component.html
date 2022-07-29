@@ -1,8 +1,10 @@
-<div class="text">
+<div class="text" #text>
   <h1>Error 404</h1>
   <p>We're sorry, the page was not found.</p>
 </div>
 
-<img src="../../assets/img/astronaut.png" [@astronautMove]="stateAstronaut" />
-
-<button (click)="onMove()">Click here</button>
+<img
+  src="../../assets/img/astronaut.png"
+  [@astronautMove]="stateAstronaut"
+  #astronaut
+/>
