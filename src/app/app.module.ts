@@ -14,7 +14,6 @@ import { PhotosComponent } from './photos/photos.component';
 import { ErrorComponent } from './error/error.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { TopicComponent } from './funfacts/topic/topic.component';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -37,7 +36,6 @@ import { SingleImageComponent } from './photos/single-image/single-image.compone
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
-    NoopAnimationsModule,
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
