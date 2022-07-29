@@ -19,6 +19,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { SingleImageComponent } from './photos/single-image/single-image.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +34,7 @@ import { SingleImageComponent } from './photos/single-image/single-image.compone
   ],
   imports: [
     BrowserModule,
+    DragDropModule,
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,

@@ -3,10 +3,15 @@ import {
   state,
   style,
   trigger,
-  animation,
   transition,
 } from '@angular/animations';
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { interval, Subscription } from 'rxjs';
 
 @Component({
@@ -27,14 +32,16 @@ import { interval, Subscription } from 'rxjs';
           transform: 'translateX(-50%) translateY(calc(-100vh + 200px))',
         })
       ),
-      transition('bottom => up', [animate('1s')]),
-      transition('up => bottom', [animate('1s')]),
+      transition('* => up', [animate('2s')]),
+      // transition('up => bottom', [animate('1s')]),
     ]),
   ],
 })
 export class ErrorComponent implements OnInit {
   stateAstronaut: string = 'bottom';
   stateText: string = 'center';
+  textAnimated: boolean = false;
+  astronautIsAbove: boolean = false;
 
   sub = new Subscription();
 
@@ -48,18 +55,54 @@ export class ErrorComponent implements OnInit {
   ngOnInit(): void {
     setTimeout(() => {
       this.stateAstronaut = 'up';
-    }, 6000);
-
-    this.sub = interval(100).subscribe(() => {
-      this.check();
-    });
-    // console.log(this.astronaut);
+    }, 1000);
   }
 
-  private check() {
-    const astronaut = getComputedStyle(
+  @HostListener('mousemove', ['$event'])
+  check() {
+    let astronaut = getComputedStyle(
       this.astronaut.nativeElement
     ).transform.split(',');
-    const astronautTop = astronaut[5].split(')');
+    let astronautBottom = Math.floor(-+astronaut[5].split(')')[0]);
+    let astronautTop = Math.floor(window.innerHeight - 200 - astronautBottom);
+
+    const text = Math.floor((window.innerHeight - 238.8) / 2);
+
+    if (astronautBottom > 0 && astronautTop < window.innerHeight - 200) {
+      if (astronautBottom > 20) {
+        this.astronautIsAbove = true;
+        // console.log('bottom in if: ', astronautBottom);
+      } else {
+        this.astronautIsAbove = false;
+        // console.log('bottom in else: ', astronautBottom);
+        // this.sub.unsubscribe();
+
+        astronautBottom = Math.floor(-+astronaut[5].split(')')[0]);
+        astronautTop = Math.floor(window.innerHeight - 200 - astronautBottom);
+        setTimeout(() => {
+          this.stateAstronaut = 'up';
+        }, 1000);
+      }
+    } else {
+      this.astronautIsAbove = false;
+      astronautBottom = 0;
+      astronautTop = window.innerHeight - 200;
+      this.astronaut.nativeElement.style.transform = 'translateY(0)';
+    }
+
+    if (astronautTop < 20) {
+      this.stateAstronaut = 'moving';
+    }
+
+    if (text <= astronautBottom + 100 && text >= astronautBottom - 150) {
+      this.textAnimated = true;
+    } else if (text <= astronautTop + 200 && text >= astronautTop + 450) {
+      this.textAnimated = true;
+    } else {
+      this.textAnimated = false;
+    }
+
+    console.log('bottom: ' + astronautBottom);
+    console.log('top: ' + astronautTop);
   }
 }

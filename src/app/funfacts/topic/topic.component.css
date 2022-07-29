@@ -1,3 +1,8 @@
+.input-box {
+  display: flex;
+  justify-content: end;
+}
+
 .topic-title {
   display: flex;
   justify-content: center;
@@ -15,7 +20,8 @@
   background-color: var(--clr-2);
 }
 
-.single-fun-fact h1,
+.single-fun-fact h4,
 .single-fun-fact p {
-  padding: 10px;
+  padding: 5px;
+  margin: 0;
 }

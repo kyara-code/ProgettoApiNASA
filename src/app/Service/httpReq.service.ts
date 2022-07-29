@@ -1,5 +1,7 @@
 import { MarsPhoto } from './../Model/marsPhoto.model';
 import { DailyImage } from './../Model/dailyImage.model';
+import { NewsModel } from './../Model/news.model';
+
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
@@ -64,6 +66,19 @@ export class HttpReq {
     );
   }
 
+  onGetNews() {
+    return this.http.get<NewsModel[]>(
+      'https://api.spaceflightnewsapi.net/v3/articles?_limit=5'
+    );
+  }
+
+  onGetFunFacts(chosenTopic: string) {
+    return this.http.get<NewsModel[]>(
+      'https://api.spaceflightnewsapi.net/v3/blogs?_limit=5&summary_contains=' +
+        chosenTopic
+    );
+  }
+
   onGetDailyImageArchive() {
     this.onChangeDate();
     return this.http.get<DailyImage[]>(
@@ -75,6 +90,8 @@ export class HttpReq {
         this.endDate
     );
   }
+
+  // ---- Cambio data per l'archivio delle immagini ----
 
   onChangeDate() {
     if (this.startDate === this.endDate) {
@@ -94,14 +111,9 @@ export class HttpReq {
     this.endDate = '';
   }
 
-  onGetMarsPhoto() {
-    return this.http.get<{ photos: MarsPhoto[] }>(
-      'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&camera=fhaz&api_key=' +
-        apiKey
-    );
-  }
+  // ---------------------------------------------------
 
-  // invio delle email ----------
+  // ---- invio delle email ----
 
   onSendEmail(
     fromName: string,
@@ -116,5 +128,5 @@ export class HttpReq {
     });
   }
 
-  // ----------------------------
+  // ---------------------------
 }

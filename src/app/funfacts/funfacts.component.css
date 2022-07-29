@@ -95,3 +95,7 @@ header {
   padding: 0 2rem 2rem 2rem;
   color: var(--clr-5);
 }
+
+.fun-facts-section {
+  transform: translateY(-250px);
+}

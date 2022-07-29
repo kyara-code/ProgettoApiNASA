@@ -2,6 +2,7 @@ import { DailyImage } from './../Model/dailyImage.model';
 import { Component, OnInit } from '@angular/core';
 import { HttpReq } from '../Service/httpReq.service';
 import { DomSanitizer } from '@angular/platform-browser';
+import { NewsModel } from './../Model/news.model';
 
 @Component({
   selector: 'app-home-page',
@@ -17,7 +18,8 @@ export class HomePageComponent implements OnInit {
     title: '',
   };
 
-  newsArray = [{ id: 0, title: '', newsText: '', imgUrl: '' }];
+  // newsArray = [{ id: 0, title: '', newsText: '', imgUrl: '' }];
+  newsArray: NewsModel[] = [];
 
   constructor(
     private httpReqService: HttpReq,
@@ -30,7 +32,10 @@ export class HomePageComponent implements OnInit {
     });
 
     // riempio news array
-    this.newsArray = this.httpReqService.newsArray;
+    this.httpReqService.onGetNews().subscribe((response) => {
+      this.newsArray = response;
+    });
+    // this.newsArray = this.httpReqService.newsArray;
   }
 
   photoURL() {
