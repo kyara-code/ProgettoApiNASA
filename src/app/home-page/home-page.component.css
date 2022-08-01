@@ -125,7 +125,7 @@ header div {
 }
 
 .menu {
-  height: 100%;
+  height: calc(100% - 30px);
 
   max-height: 718px;
 

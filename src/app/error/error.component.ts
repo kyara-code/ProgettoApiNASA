@@ -60,6 +60,10 @@ export class ErrorComponent implements OnInit {
 
   @HostListener('mousemove', ['$event'])
   check() {
+    if (this.stateAstronaut === 'moving') {
+      this.stateAstronaut = 'up';
+    }
+
     let astronaut = getComputedStyle(
       this.astronaut.nativeElement
     ).transform.split(',');
@@ -69,29 +73,36 @@ export class ErrorComponent implements OnInit {
     const text = Math.floor((window.innerHeight - 238.8) / 2);
 
     if (astronautBottom > 0 && astronautTop < window.innerHeight - 200) {
-      if (astronautBottom > 20) {
+      if (astronautBottom > window.innerHeight - 250) {
         this.astronautIsAbove = true;
         // console.log('bottom in if: ', astronautBottom);
+        // this.stateAstronaut = 'up';
+
+        astronautBottom = window.innerHeight - 200;
+        astronautTop = 0;
+        this.astronaut.nativeElement.style.transform =
+          'translateX(-50%) translateY(calc(-100vh + 200px))';
       } else {
         this.astronautIsAbove = false;
         // console.log('bottom in else: ', astronautBottom);
         // this.sub.unsubscribe();
 
-        astronautBottom = Math.floor(-+astronaut[5].split(')')[0]);
-        astronautTop = Math.floor(window.innerHeight - 200 - astronautBottom);
-        setTimeout(() => {
-          this.stateAstronaut = 'up';
-        }, 1000);
+        this.stateAstronaut = 'moving';
+
+        // astronautBottom = 0;
+        // astronautTop = window.innerHeight - 200;
+        // this.astronaut.nativeElement.style.transform =
+        //   'translateX(-50%) translateY(0)';
+
+        // astronautBottom = Math.floor(-+astronaut[5].split(')')[0]);
+        // astronautTop = Math.floor(window.innerHeight - 200 - astronautBottom);
       }
     } else {
       this.astronautIsAbove = false;
       astronautBottom = 0;
       astronautTop = window.innerHeight - 200;
-      this.astronaut.nativeElement.style.transform = 'translateY(0)';
-    }
-
-    if (astronautTop < 20) {
-      this.stateAstronaut = 'moving';
+      this.astronaut.nativeElement.style.transform =
+        'translateX(-50%) translateY(0)';
     }
 
     if (text <= astronautBottom + 100 && text >= astronautBottom - 150) {
