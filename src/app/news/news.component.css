@@ -1,0 +1,75 @@
+.wrapper {
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  perspective: 10px;
+  position: relative;
+
+  perspective: 10px;
+}
+
+/* --- Top Page --- */
+
+header {
+  height: 100%;
+
+  transform-style: preserve-3d;
+}
+
+.background {
+  position: absolute;
+  height: 100%;
+  width: 100vw;
+  object-fit: cover;
+
+  transform: translateZ(-15px) scale(2.5);
+  z-index: -1;
+}
+
+/* Title */
+
+.title-container {
+  display: flex;
+  justify-content: center;
+
+  transform: translateZ(-5px) scale(1.5);
+}
+
+.title {
+  color: var(--clr-5);
+  font-size: 5rem;
+  position: relative;
+}
+
+/* --- End Top Page ---  */
+
+/* --- Subjects Section --- */
+
+.menu {
+  background-color: rgba(var(--clr-2-rgb), 0.7);
+  transform: translateY(-300px);
+  width: 80%;
+  height: 80%;
+  margin-left: 10%;
+  padding: 2rem 2rem 2rem 2rem;
+}
+
+.menu-title {
+  color: var(--clr-5);
+  font-size: 2rem;
+  padding-bottom: 20px;
+}
+
+/* --- Fun Facts Section ---  */
+
+.section {
+  background-color: var(--clr-1);
+  position: relative;
+  font-size: 1rem;
+  padding: 0 2rem 2rem 2rem;
+  color: var(--clr-5);
+}
+
+.fun-facts-section {
+  transform: translateY(-250px);
+}

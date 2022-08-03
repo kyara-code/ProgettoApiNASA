@@ -1,0 +1,30 @@
+<!-- Fare come per le foto: carichi la lista delle prime 10  notizie, poi hai un load more
+e quando ne clicchi una hai un popup che ti dà tutta la descrizione e anche il link a tutta la
+notizia completa. -->
+
+<div class="wrapper">
+  <!-- Top Page -->
+  <header>
+    <img src="../../assets/img/space-wallpaper.webp" class="background" />
+    <app-navbar></app-navbar>
+    <div class="title-container">
+      <h1 class="title">Your News</h1>
+    </div>
+  </header>
+
+  <!-- Subjects Menu -->
+  <div class="section">
+    <div class="menu">
+      <div class="menu-title">News</div>
+      <div class="subjects-list"></div>
+    </div>
+
+    <!-- Fun Facts Section -->
+    <div class="fun-facts-section">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <app-footer></app-footer>
+</div>
