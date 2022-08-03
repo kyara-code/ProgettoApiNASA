@@ -1,28 +1,38 @@
-<div class="text" #text>
-  <div
-    class="container"
-    [ngClass]="{ animated: textAnimated, 'not-animated': !textAnimated }"
-  >
-    <div id="left">
-      <h1>Erro</h1>
-      <p>We're sorry, the pa</p>
-    </div>
+<div class="main">
+  <img src="../../assets/img/ERROR-bg.jpg" class="background" />
 
-    <div id="right">
-      <h1>r 404</h1>
-      <p>ge was not found.</p>
+  <img src="../../assets/img/star1.png" class="star1" #star1 />
+  <img src="../../assets/img/star2.png" class="star2" #star2 />
+  <img src="../../assets/img/star1.png" class="star3" #star3 />
+  <img src="../../assets/img/star2.png" class="star4" #star4 />
+
+  <div class="text" #text>
+    <div
+      class="container"
+      [ngClass]="{ animated: textAnimated, 'not-animated': !textAnimated }"
+    >
+      <div id="left">
+        <h1>Erro</h1>
+        <p>We're sorry, the pa</p>
+      </div>
+
+      <div id="right">
+        <h1>r 404</h1>
+        <p>ge was not found.</p>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="drag-container">
-  <img
-    src="../../assets/img/astronaut.png"
-    [@astronautMove]="stateAstronaut"
-    #astronaut
-    cdkDragLockAxis="y"
-    cdkDrag
-    [cdkDragDisabled]="!astronautIsAbove"
-    cdkDragBoundary=".drag-container"
-  />
+  <div class="drag-container" #dragDiv>
+    <img
+      src="../../assets/img/astronaut.png"
+      [@astronautMove]="stateAstronaut"
+      #astronaut
+      cdkDragLockAxis="y"
+      cdkDrag
+      [cdkDragDisabled]="!astronautIsAbove"
+      cdkDragBoundary=".drag-container"
+      (cdkDragEnded)="stop($event)"
+    />
+  </div>
 </div>

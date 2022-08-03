@@ -26,7 +26,6 @@ export class AboutUsComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log('Invio in corso' + this.contactForm);
     this.httpReq
       .onSendEmail(
         this.contactForm.value.name,
