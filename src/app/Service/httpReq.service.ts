@@ -62,11 +62,23 @@ export class HttpReq {
   // ---- Cambio data per l'archivio delle immagini ----
 
   onChangeDate() {
-    if (this.startDate === this.endDate) {
-      this.tempEndDate.setDate(this.tempStartDate.getDate());
+    let endDateVar;
+    if (this.endDate) {
+      endDateVar = new Date(this.endDate);
     } else {
-      this.tempEndDate.setDate(this.tempStartDate.getDate() - 1);
+      endDateVar = new Date();
     }
+
+    if (this.startDate === this.endDate) {
+      endDateVar.setDate(this.tempStartDate.getDate());
+    } else {
+      endDateVar.setDate(this.tempStartDate.getDate() - 1);
+    }
+
+    if (endDateVar.getDate() > this.tempEndDate.getDate()) {
+      endDateVar.setMonth(this.tempEndDate.getMonth() - 1);
+    }
+    this.tempEndDate = endDateVar;
     this.tempStartDate.setDate(this.tempStartDate.getDate() - 12);
     this.startDate = this.tempStartDate.toISOString().split('T')[0];
     this.endDate = this.tempEndDate.toISOString().split('T')[0];
