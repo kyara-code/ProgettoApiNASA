@@ -18,7 +18,6 @@ export class HomePageComponent implements OnInit {
     title: '',
   };
 
-  // newsArray = [{ id: 0, title: '', newsText: '', imgUrl: '' }];
   newsArray: NewsModel[] = [];
 
   constructor(
@@ -30,12 +29,9 @@ export class HomePageComponent implements OnInit {
     this.httpReqService.onGetDailyImage().subscribe((response) => {
       this.dailyImg = response;
     });
-
-    // riempio news array
     this.httpReqService.onGetNews().subscribe((response) => {
       this.newsArray = response;
     });
-    // this.newsArray = this.httpReqService.newsArray;
   }
 
   photoURL() {

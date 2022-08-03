@@ -1,0 +1,33 @@
+footer {
+  width: 100vw;
+  background-color: var(--clr-2);
+  color: var(--clr-5);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer div:nth-child(2) {
+  padding-right: 60px;
+}
+
+footer ul {
+  margin: 0;
+}
+
+footer ul li {
+  text-indent: 1em;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  font-size: smaller;
+  color: var(--clr-5);
+}
+
+a:hover,
+a:active {
+  color: var(--clr-4);
+}

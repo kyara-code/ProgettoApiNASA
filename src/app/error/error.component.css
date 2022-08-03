@@ -15,6 +15,7 @@ img {
   text-align: center;
   color: var(--clr-error);
   width: 100%;
+  text-shadow: 0 0 3px var(--clr-5);
 
   position: absolute;
   top: 50%;
@@ -55,4 +56,49 @@ img {
 .drag-container {
   width: 100vw;
   height: 100vh;
+  z-index: 5;
+}
+
+.background {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  object-fit: cover;
+  min-width: 100vw;
+  height: 100vh;
+
+  /* transform: translate(50%, 50%); */
+
+  z-index: -1;
+}
+
+.main {
+  overflow: hidden;
+}
+
+.star1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(50%, 50%) scale(-1, 1);
+}
+
+.star2 {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  transform: translateX(-100%) scale(-1, 1);
+}
+
+.star3 {
+  position: absolute;
+  top: 55%;
+  left: 100%;
+  transform: translateX(-100%);
+}
+
+.star4 {
+  position: absolute;
+  top: 10%;
+  left: 10%;
 }

@@ -20,6 +20,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { SingleImageComponent } from './photos/single-image/single-image.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { FooterComponent } from './footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +32,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     NavbarComponent,
     TopicComponent,
     SingleImageComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
