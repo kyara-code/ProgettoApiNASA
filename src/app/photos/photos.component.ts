@@ -49,7 +49,6 @@ export class PhotosComponent implements OnInit, OnDestroy {
     });
     this.photoArray = this.photoArray.concat(res);
     this.httpReq.imageArray = this.photoArray;
-    console.log(res);
   }
 
   onGetPhoto(index: number) {

@@ -1,3 +1,4 @@
+import { NewsComponent } from './news/news.component';
 import { SingleImageComponent } from './photos/single-image/single-image.component';
 import { TopicComponent } from './funfacts/topic/topic.component';
 import { ErrorComponent } from './error/error.component';
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path: 'about-us',
     component: AboutUsComponent,
+  },
+  {
+    path: 'news',
+    component: NewsComponent,
   },
   {
     path: '**',

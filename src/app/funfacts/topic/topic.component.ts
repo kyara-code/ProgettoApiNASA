@@ -1,6 +1,6 @@
 import { ActivatedRoute, Params } from '@angular/router';
 import { HttpReq } from './../../Service/httpReq.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 
 import { NewsModel } from './../../Model/news.model';
 
@@ -16,7 +16,6 @@ export class TopicComponent implements OnInit {
   constructor(private httpReq: HttpReq, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    console.log('partito');
     this.route.queryParams.subscribe((queryParams: Params) => {
       this.chosenTopic = queryParams['id'];
       this.httpReq.onGetFunFacts(this.chosenTopic).subscribe((response) => {
@@ -26,5 +25,11 @@ export class TopicComponent implements OnInit {
         this.chosenTopic = 'All Fun Facts';
       }
     });
+  }
+
+  onSearch(event: KeyboardEvent) {
+    if (event.key === 'Enter') {
+      // Allora avvia la ricerca
+    }
   }
 }

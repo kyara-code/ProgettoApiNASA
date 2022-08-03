@@ -2,7 +2,12 @@
   {{ chosenTopic | titlecase }}
 </h1>
 <div class="input-box">
-  <input type="text" *ngIf="chosenTopic === 'All Fun Facts'" />
+  <h3>Search:</h3>
+  <input
+    type="text"
+    *ngIf="chosenTopic === 'All Fun Facts'"
+    (keydown)="onSearch($event)"
+  />
 </div>
 <div class="fun-facts-list">
   <ul class="fun-facts">

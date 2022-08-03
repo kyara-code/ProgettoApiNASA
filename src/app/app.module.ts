@@ -21,6 +21,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { SingleImageComponent } from './photos/single-image/single-image.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { FooterComponent } from './footer/footer.component';
+import { NewsComponent } from './news/news.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +34,7 @@ import { FooterComponent } from './footer/footer.component';
     TopicComponent,
     SingleImageComponent,
     FooterComponent,
+    NewsComponent,
   ],
   imports: [
     BrowserModule,
