@@ -40,9 +40,16 @@ export class PhotosComponent implements OnInit, OnDestroy {
 
   onFilterAndReverseArray(res: DailyImage[]) {
     res.reverse();
-    res = res.filter((res) => res.hdurl);
+    res = res.filter((res) => {
+      return (
+        res.hdurl?.includes('jpeg') ||
+        res?.hdurl?.includes('png') ||
+        res?.hdurl?.includes('jpg')
+      );
+    });
     this.photoArray = this.photoArray.concat(res);
     this.httpReq.imageArray = this.photoArray;
+    console.log(res);
   }
 
   onGetPhoto(index: number) {
@@ -59,9 +66,13 @@ export class PhotosComponent implements OnInit, OnDestroy {
 
   onLoadMore() {
     this.httpReq.onGetDailyImageArchive().subscribe((res) => {
-      res.reverse();
-      this.photoArray = this.photoArray.concat(res);
-      this.httpReq.imageArray = this.photoArray;
+      this.onFilterAndReverseArray(res);
+      this.route.queryParams.subscribe((params) => {
+        const id = params['id'];
+        if (id) {
+          this.onGetPhoto(id);
+        }
+      });
     });
   }
 
